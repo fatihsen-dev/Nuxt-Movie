@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
    css: ["@/styles/style.scss"],
-   modules: ["nuxt-icon"],
+   modules: ["nuxt-icon", "nuxt-swiper"],
    runtimeConfig: {
       public: {
          API_KEY: "e30de7f71b54f49a227ae87142d1e8a4",
