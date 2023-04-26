@@ -13,5 +13,6 @@
    flex-direction: column;
    background-color: #0a0a0a;
    color: #fff;
+   overflow: auto;
 }
 </style>
