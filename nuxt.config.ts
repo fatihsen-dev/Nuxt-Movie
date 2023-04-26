@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+   ssr: false,
    css: ["@/styles/style.scss"],
    modules: ["nuxt-icon", "nuxt-swiper"],
    runtimeConfig: {
