@@ -6,7 +6,10 @@
    </Head>
    <div class="main">
       <div class="container">
-         <h1>Home</h1>
+         <HomeTrendSlider />
+      </div>
+      <div>
+         <TendsSlider />
       </div>
    </div>
 </template>
@@ -14,13 +17,16 @@
 <style scoped lang="scss">
 .main {
    flex: 1;
+   height: 800px;
 
    & > .container {
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 100%;
-      padding: 0 20px;
+      height: calc(100% + 80px);
+      position: relative;
+      top: -80px;
+      width: 100%;
+      max-width: none;
       h1 {
          font-weight: 500;
       }
