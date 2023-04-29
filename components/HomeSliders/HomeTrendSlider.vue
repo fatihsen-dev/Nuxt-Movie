@@ -118,4 +118,32 @@ if (imagesResponse) {
       }
    }
 }
+@media (width <= 850px) {
+   .container {
+      & > p {
+         font-size: 20px !important;
+      }
+   }
+}
+
+@media (width <= 705px) {
+   .container {
+      & > h1 {
+         display: -webkit-box;
+         -webkit-line-clamp: 2;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+         font-size: 30px !important;
+      }
+      & > p {
+         display: -webkit-box;
+         -webkit-line-clamp: 5;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+      }
+      & > a {
+         padding: 10px 20px !important;
+      }
+   }
+}
 </style>
