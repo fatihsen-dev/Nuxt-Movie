@@ -2,7 +2,6 @@
    <div class="main">
       <AppHeader />
       <slot />
-      <AppFooter />
    </div>
 </template>
 

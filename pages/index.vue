@@ -1,5 +1,3 @@
-<script setup lans="ts"></script>
-
 <template>
    <Head>
       <Title>Home - Nuxt Movie</Title>
@@ -7,9 +5,6 @@
    <div class="main">
       <div class="container">
          <HomeTrendSlider />
-      </div>
-      <div>
-         <TendsSlider />
       </div>
    </div>
 </template>
@@ -33,6 +28,12 @@
       .images > img {
          height: 200px;
       }
+   }
+}
+@media (width <= 705px) {
+   .container {
+      height: calc(100% + 110px) !important;
+      top: -110px !important;
    }
 }
 </style>

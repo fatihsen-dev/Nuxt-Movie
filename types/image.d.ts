@@ -10,7 +10,7 @@ export type ImageType = {
 
 export type ImagesType = {
    backdrops: ImageType[];
-   id: 3;
+   id: number;
    logos: Array<any>;
    posters: ImageType[];
 };

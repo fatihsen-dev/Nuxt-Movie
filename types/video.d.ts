@@ -12,6 +12,6 @@ export type VideoType = {
 };
 
 export type VideosType = {
-   id: 726759;
+   id: number;
    results: VideoType[];
 };
