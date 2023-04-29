@@ -22,10 +22,10 @@
 </template>
 
 <script setup lang="ts">
-const config = useRuntimeConfig();
-import { ResultType, MovieType } from "@/types/movie";
-import { ref } from "vue";
+import { MovieType, ResultType } from "~/types/movie";
 import { Combobox, ComboboxInput, ComboboxOptions, ComboboxOption } from "@headlessui/vue";
+
+const config = useRuntimeConfig();
 
 let movies = ref<Array<MovieType>>([]);
 
@@ -34,7 +34,7 @@ const inputHandle = async (e: any) => {
       `https://api.themoviedb.org/3/search/movie?api_key=${config.public.API_KEY}&query=${e.target.value}`
    );
    if (response) {
-      const firstFiveMovie = response.results.slice(0, 15);
+      const firstFiveMovie = response.results.filter((movie) => movie.poster_path && movie.backdrop_path);
       movies.value = firstFiveMovie;
    }
 };
@@ -46,36 +46,36 @@ const inputHandle = async (e: any) => {
    margin-left: 30px;
 
    input[type="text"] {
-      background-color: #0a0a0a;
+      background-color: #fff;
       border: none;
-      color: #fff;
+      color: #000;
       font-size: 18px;
       padding: 4px 6px;
       font-weight: 300;
-      border-radius: 3px;
       width: 300px;
       &::placeholder {
-         color: #fff;
-         opacity: 0.4;
+         color: #000;
+         opacity: 0.9;
          font-size: 16px;
       }
-      &:focus {
-         border-radius: 3px 3px 0 0;
-      }
+   }
+
+   a {
+      color: #000;
    }
    & > ul {
       position: absolute;
       background-color: #fff;
       color: #0a0a0a;
       width: 100%;
-      padding: 10px;
+      padding: 6px;
       gap: 4px;
       display: flex;
       flex-direction: column;
-      border-radius: 0 0 3px 3px;
-      max-height: 500px;
+      max-height: 300px;
       height: auto;
       overflow: auto;
+      z-index: 22;
 
       &::-webkit-scrollbar {
          width: 8px;
@@ -84,7 +84,7 @@ const inputHandle = async (e: any) => {
          background-color: #ddd;
       }
       &::-webkit-scrollbar-thumb {
-         background: #00dc82;
+         background: rgba($color: #04a777, $alpha: 0.7);
       }
 
       & > li {
@@ -94,12 +94,11 @@ const inputHandle = async (e: any) => {
          font-size: 16px;
          width: 100%;
          padding: 4px;
-         background-color: rgba($color: #00dc82, $alpha: 0.2);
+         background-color: #f5f5f5;
          transition: 0.15s;
-         border-bottom: 1px solid rgba($color: #00dc82, $alpha: 0.5);
 
          &:hover {
-            background-color: rgba($color: #00dc82, $alpha: 0.3);
+            background-color: #04a777;
          }
 
          & > a {
