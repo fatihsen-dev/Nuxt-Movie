@@ -1,42 +1,40 @@
-# Nuxt 3 Minimal Starter
+# Nuxt Movie
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+Nuxt Movie is a movie application developed using Nuxt3, SASS, and SwiperJS technologies. This project is prepared as a sample project for those who want to learn Nuxt3 framework.
 
-## Setup
+## Installation
 
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
+1. Clone the project folder: `git clone https://github.com/USERNAME/Nuxt-Movie.git`
+2. Set your API key in the `nuxt.config.ts` file:
+```js
+export default defineNuxtConfig({
+   ssr: false,
+   css: ["@/styles/style.scss"],
+   modules: ["nuxt-icon", "nuxt-swiper"],
+   runtimeConfig: {
+      public: {
+         API_KEY: <<the_movie_db_api_key>>,
+      },
+   },
+   app: {
+      head: {
+         charset: "utf-8",
+         viewport: "width=device-width, initial-scale=1",
+      },
+   },
+});
 ```
+3. Install the required packages by running the following command in the project folder: `npm install`
+4. To run the application, use the following command: `npm run dev`
 
-## Development Server
+## Usage
 
-Start the development server on `http://localhost:3000`
+The application retrieves movie data using The Movie Database (TMDb) API and provides users with functionalities such as searching for movies, getting information about movies, viewing movie posters.
 
-```bash
-npm run dev
-```
+## Contributing
 
-## Production
+To contribute, please first open an issue and then submit a pull request.
 
-Build the application for production:
+## License
 
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+This project is licensed under the MIT License. For more information, see the `LICENSE` file.
